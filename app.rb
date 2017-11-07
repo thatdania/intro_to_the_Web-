@@ -18,6 +18,13 @@ get '/silly' do
   "You are pretty"
 end
 
-get '/cat' do
+get '/random-cat' do
+  @dania = ["chips","meat","garlic_sauce"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  @dania = params[:name]
+  @food = params[:likes]
   erb(:index)
 end
